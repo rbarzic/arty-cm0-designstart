@@ -1,9 +1,0 @@
---include /home/roba/perso/github/cortexm0_designstart/logical/models/memories/
---include /home/roba/perso/github/cortexm0_designstart/logical/cmsdk_apb_watchdog/verilog/
---include /home/roba/perso/github/cortexm0_designstart/logical/cmsdk_apb_dualtimers/verilog/
---include /home/roba/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/
---include /home/roba/perso/github/arty-designstart-cm0/import/amba_components/common/include
-/home/roba/perso/github/arty-designstart-cm0/synt/chip_layout.v
-/home/roba/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/cmsdk_uart_capture.v
-/home/roba/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/cmsdk_clkreset.v
-/home/roba/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/tb_cmsdk_mcu.v

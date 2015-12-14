@@ -1,5 +1,0 @@
-verilog xil_defaultlib "./../../../../arty_mmcm/arty_mmcm_sim_netlist.v" 
-
-verilog xil_defaultlib "glbl.v"
-
-nosort
