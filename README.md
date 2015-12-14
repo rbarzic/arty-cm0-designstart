@@ -24,3 +24,5 @@ This project uses submodules. To clone it you need to run the following commands
 ```
 
 This is work in progress so expect some rough edges
+
+More documentation is available [here](http://rbarzic.github.io/arty-cm0-designstart/)
