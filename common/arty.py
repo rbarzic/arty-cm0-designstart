@@ -23,6 +23,15 @@ Put description of application here
                         help='Vivado synthesis file list (as tcl file)',
                         default="")
 
+    parser.add_argument('--topdir', action='store', dest='topdir',
+                        help='Top directory for the project',
+                        default="")
+
+    parser.add_argument('--designstart', action='store', dest='designstart',
+                        help='Top directory for the ARM DesignStart forlder',
+                        default="")
+
+
     parser.add_argument('--version', action='version', version='%(prog)s 0.1')
 
     return parser.parse_args()
@@ -33,16 +42,21 @@ args = get_args()
 
 l, d = arty_cm0.arty_cm0()
 
+context = dict()
+
+context['top'] = args.topdir
+context['top_ds'] = args.designstart
+
 
 if args.iverilog != "":
     print "-I- iverilog generation"""
-    txt = iverilog.get_iverilog_file_list(l, d, arty_cm0.context)
+    txt = iverilog.get_iverilog_file_list(l, d, context)
     with open(args.iverilog,'w')  as f:
         f.write(txt)
 
 if args.vivado_sim != "":
     print "-I- Vivado/Sim  generation"""
-    txt = xilinx.get_xvlog_file_list(l, d, arty_cm0.context)
+    txt = xilinx.get_xvlog_file_list(l, d, context)
     with open(args.vivado_sim,'w')  as f:
         f.write(txt)
 

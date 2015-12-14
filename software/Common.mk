@@ -4,7 +4,7 @@
 CPU_PRODUCT = CORTEX_M0
 
 # Shared software directory
-SOFTWARE_DIR ?= $(CORTEXM0_DS)/software
+SOFTWARE_DIR ?= $(DESIGNSTART_TOP)/software
 CMSIS_DIR    = $(SOFTWARE_DIR)/cmsis
 CORE_DIR     = $(CMSIS_DIR)/CMSIS/Include
 
@@ -86,6 +86,17 @@ all_gcc:
 all_bin: $(TESTNAME).bin
 	# Generate hex file from binary
 	od -v -A n -t x1 --width=1  $(TESTNAME).bin > $(TESTNAME).hex
+
+
+# Simulation support
+
+wave:
+	gtkwave tb_cmsdk_mcu.vcd
+comp:
+	make -C $(TOP)/sim comp
+
+run:
+	vvp $(TOP)/sim/tb  +program_memory=$(TESTNAME).vmem
 
 # ---------------------------------------------------------------------------------------
 # Clean

@@ -2,7 +2,7 @@
 --include /home/ronan/perso/github/cortexm0_designstart/logical/cmsdk_apb_watchdog/verilog/
 --include /home/ronan/perso/github/cortexm0_designstart/logical/cmsdk_apb_dualtimers/verilog/
 --include /home/ronan/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/
---include /home/ronan/perso/github/arty-designstart-cm0/import/amba_components/common/include
+--include ../import/amba_components/common/include
 /home/ronan/perso/github/cortexm0_designstart/cores/cortexm0_designstart_r1p0/logical/cortexm0ds/verilog/CORTEXM0DS.v
 /home/ronan/perso/github/cortexm0_designstart/cores/cortexm0_designstart_r1p0/logical/cortexm0ds/verilog/cortexm0ds_logic.v
 /home/ronan/perso/github/cortexm0_designstart/cores/cortexm0_designstart_r1p0/logical/models/cells/cm0_dbg_reset_sync.v
@@ -37,12 +37,12 @@
 /home/ronan/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/cmsdk_mcu_system.v
 /home/ronan/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/cmsdk_mcu_pin_mux.v
 /home/ronan/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/cmsdk_mcu_clkctrl.v
-/home/ronan/perso/github/arty-designstart-cm0/rtl/bytewrite_ram_1b.v
-/home/ronan/perso/github/arty-designstart-cm0/rtl/cmsdk_ahb_ram.v
-/home/ronan/perso/github/arty-designstart-cm0/import/amba_components/ahb_to_ssram/rtl/verilog/ahb_to_ssram.v
-/home/ronan/perso/github/arty-designstart-cm0/ips/clock_manager/arty_mmcm/arty_mmcm_clk_wiz.v
-/home/ronan/perso/github/arty-designstart-cm0/ips/clock_manager/arty_mmcm/arty_mmcm.v
-/home/ronan/perso/github/arty-designstart-cm0/rtl/cmsdk_mcu.v
+../rtl/bytewrite_ram_1b.v
+../rtl/cmsdk_ahb_ram.v
+../import/amba_components/ahb_to_ssram/rtl/verilog/ahb_to_ssram.v
+../ips/clock_manager/arty_mmcm/arty_mmcm_clk_wiz.v
+../ips/clock_manager/arty_mmcm/arty_mmcm.v
+../rtl/cmsdk_mcu.v
 /home/ronan/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/cmsdk_uart_capture.v
 /home/ronan/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/cmsdk_clkreset.v
 /home/ronan/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/tb_cmsdk_mcu.v
