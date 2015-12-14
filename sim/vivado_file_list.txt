@@ -1,0 +1,48 @@
+--include /home/ronan/perso/github/cortexm0_designstart/logical/models/memories/
+--include /home/ronan/perso/github/cortexm0_designstart/logical/cmsdk_apb_watchdog/verilog/
+--include /home/ronan/perso/github/cortexm0_designstart/logical/cmsdk_apb_dualtimers/verilog/
+--include /home/ronan/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/
+--include /home/ronan/perso/github/arty-designstart-cm0/import/amba_components/common/include
+/home/ronan/perso/github/cortexm0_designstart/cores/cortexm0_designstart_r1p0/logical/cortexm0ds/verilog/CORTEXM0DS.v
+/home/ronan/perso/github/cortexm0_designstart/cores/cortexm0_designstart_r1p0/logical/cortexm0ds/verilog/cortexm0ds_logic.v
+/home/ronan/perso/github/cortexm0_designstart/cores/cortexm0_designstart_r1p0/logical/models/cells/cm0_dbg_reset_sync.v
+/home/ronan/perso/github/cortexm0_designstart/cores/cortexm0_designstart_r1p0/logical/cortexm0_integration/verilog/cortexm0_wic.v
+/home/ronan/perso/github/cortexm0_designstart/cores/cortexm0_designstart_r1p0/logical/cortexm0_dap/verilog/CORTEXM0DAP.v
+/home/ronan/perso/github/cortexm0_designstart/cores/cortexm0_designstart_r1p0/logical/cortexm0_integration/verilog/CORTEXM0INTEGRATION.v
+/home/ronan/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/cmsdk_mcu_addr_decode.v
+/home/ronan/perso/github/cortexm0_designstart/logical/cmsdk_ahb_slave_mux/verilog/cmsdk_ahb_slave_mux.v
+/home/ronan/perso/github/cortexm0_designstart/logical/cmsdk_ahb_default_slave/verilog/cmsdk_ahb_default_slave.v
+/home/ronan/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/cmsdk_ahb_cs_rom_table.v
+/home/ronan/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/cmsdk_mcu_sysctrl.v
+/home/ronan/perso/github/cortexm0_designstart/logical/cmsdk_ahb_gpio/verilog/cmsdk_ahb_to_iop.v
+/home/ronan/perso/github/cortexm0_designstart/logical/cmsdk_iop_gpio/verilog/cmsdk_iop_gpio.v
+/home/ronan/perso/github/cortexm0_designstart/logical/cmsdk_ahb_gpio/verilog/cmsdk_ahb_gpio.v
+/home/ronan/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/cmsdk_mcu_stclkctrl.v
+/home/ronan/perso/github/cortexm0_designstart/logical/cmsdk_apb_watchdog/verilog/cmsdk_apb_watchdog_defs.v
+/home/ronan/perso/github/cortexm0_designstart/logical/cmsdk_apb_watchdog/verilog/cmsdk_apb_watchdog.v
+/home/ronan/perso/github/cortexm0_designstart/logical/cmsdk_apb_watchdog/verilog/cmsdk_apb_watchdog_frc.v
+/home/ronan/perso/github/cortexm0_designstart/logical/cmsdk_apb_uart/verilog/cmsdk_apb_uart.v
+/home/ronan/perso/github/cortexm0_designstart/logical/cmsdk_apb_timer/verilog/cmsdk_apb_timer.v
+/home/ronan/perso/github/cortexm0_designstart/logical/cmsdk_apb_subsystem/verilog/cmsdk_irq_sync.v
+/home/ronan/perso/github/cortexm0_designstart/logical/cmsdk_apb_subsystem/verilog/cmsdk_apb_test_slave.v
+/home/ronan/perso/github/cortexm0_designstart/logical/cmsdk_apb_dualtimers/verilog/cmsdk_apb_dualtimers_defs.v
+/home/ronan/perso/github/cortexm0_designstart/logical/cmsdk_apb_dualtimers/verilog/cmsdk_apb_dualtimers_frc.v
+/home/ronan/perso/github/cortexm0_designstart/logical/cmsdk_apb_dualtimers/verilog/cmsdk_apb_dualtimers.v
+/home/ronan/perso/github/cortexm0_designstart/logical/cmsdk_apb4_eg_slave/verilog/cmsdk_apb4_eg_slave.v
+/home/ronan/perso/github/cortexm0_designstart/logical/cmsdk_apb4_eg_slave/verilog/cmsdk_apb4_eg_slave_interface.v
+/home/ronan/perso/github/cortexm0_designstart/logical/cmsdk_apb4_eg_slave/verilog/cmsdk_apb4_eg_slave_reg.v
+/home/ronan/perso/github/cortexm0_designstart/logical/cmsdk_apb_slave_mux/verilog/cmsdk_apb_slave_mux.v
+/home/ronan/perso/github/cortexm0_designstart/logical/cmsdk_ahb_to_apb/verilog/cmsdk_ahb_to_apb.v
+/home/ronan/perso/github/cortexm0_designstart/logical/cmsdk_apb_subsystem/verilog/cmsdk_apb_subsystem.v
+/home/ronan/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/cmsdk_mcu_system.v
+/home/ronan/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/cmsdk_mcu_pin_mux.v
+/home/ronan/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/cmsdk_mcu_clkctrl.v
+/home/ronan/perso/github/arty-designstart-cm0/rtl/bytewrite_ram_1b.v
+/home/ronan/perso/github/arty-designstart-cm0/rtl/cmsdk_ahb_ram.v
+/home/ronan/perso/github/arty-designstart-cm0/import/amba_components/ahb_to_ssram/rtl/verilog/ahb_to_ssram.v
+/home/ronan/perso/github/arty-designstart-cm0/ips/clock_manager/arty_mmcm/arty_mmcm_clk_wiz.v
+/home/ronan/perso/github/arty-designstart-cm0/ips/clock_manager/arty_mmcm/arty_mmcm.v
+/home/ronan/perso/github/arty-designstart-cm0/rtl/cmsdk_mcu.v
+/home/ronan/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/cmsdk_uart_capture.v
+/home/ronan/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/cmsdk_clkreset.v
+/home/ronan/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/tb_cmsdk_mcu.v
