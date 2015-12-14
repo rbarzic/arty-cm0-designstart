@@ -1,0 +1,3 @@
+[submodule "import/amba_components"]
+	path = import/amba_components
+	url = https://github.com/rbarzic/amba_components.git
