@@ -130,7 +130,7 @@ module cmsdk_ahb_ram(/*AUTOARG*/
  -----/\----- EXCLUDED -----/\----- */
 
 
-    /* bytewrite_ram_1b  AUTO_TEMPLATE(
+    /* bytewrite_ram_32bits  AUTO_TEMPLATE(
      .dout            (sram_ahb_dout[31:0]),
      .din             (ahb_sram_din[31:0]),
      .enb             (ahb_sram_enb[@]),
@@ -138,8 +138,8 @@ module cmsdk_ahb_ram(/*AUTOARG*/
      .addr            (ahb_sram_addr[9:0]),
      .clk(HCLK),
      ); */
-   bytewrite_ram_1b
-   #(.SIZE(1<<(AW-2)),.ADDR_WIDTH(AW-2),.COL_WIDTH(8),.NB_COL(4))
+   bytewrite_ram_32bits
+   #(.SIZE(1<<(AW-2)),.ADDR_WIDTH(AW-2))
    U_RAM (
                            /*AUTOINST*/
           // Outputs

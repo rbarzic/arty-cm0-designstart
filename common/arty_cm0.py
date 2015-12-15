@@ -174,7 +174,8 @@ def arty_cm0():
     # Arty specific file
 
     l.append({
-        'file': "{top}/rtl/bytewrite_ram_1b.v",
+        # 'file': "{top}/rtl/bytewrite_ram_1b.v",
+        'file': "{top}/rtl/bytewrite_ram_32bits.v",
         'targets': 'synt,sim_rtl'
     })
 

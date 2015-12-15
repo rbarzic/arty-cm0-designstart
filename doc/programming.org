@@ -9,3 +9,53 @@ current_hw_target [get_hw_targets */xilinx_tcf/Digilent/*]
 open_hw_target
 set_property PROGRAM.FILE {./rpt/cpu.bit} [lindex [get_hw_devices] 0]
 program_hw_devices [lindex [get_hw_devices] 0]
+
+
+
+
+* Memory organization
+get_cells -hierarchical -filter { PRIMITIVE_TYPE =~ BMEM.bram.*  &&  NAME =~  "*u_ahb_rom*" }
+
+Result :
+Seems valid for both RAM and ROM
+
+RAMB36E1 : 16384x2 (x16 -> 64KB)
+
+| Instance                    | DIADI connection |
+| u_ahb_rom/U_RAM/RAM_reg_0_0 | [1:0]            |
+| u_ahb_rom/U_RAM/RAM_reg_0_1 | [3:2]            |
+| u_ahb_rom/U_RAM/RAM_reg_0_2 |                  |
+| u_ahb_rom/U_RAM/RAM_reg_0_3 |                  |
+|                             |                  |
+| u_ahb_rom/U_RAM/RAM_reg_1_0 |                  |
+| u_ahb_rom/U_RAM/RAM_reg_1_1 |                  |
+| u_ahb_rom/U_RAM/RAM_reg_1_2 |                  |
+| u_ahb_rom/U_RAM/RAM_reg_1_3 |                  |
+|                             |                  |
+| u_ahb_rom/U_RAM/RAM_reg_2_0 |                  |
+| u_ahb_rom/U_RAM/RAM_reg_2_1 |                  |
+| u_ahb_rom/U_RAM/RAM_reg_2_2 |                  |
+| u_ahb_rom/U_RAM/RAM_reg_2_3 |                  |
+|                             |                  |
+| u_ahb_rom/U_RAM/RAM_reg_3_0 |                  |
+| u_ahb_rom/U_RAM/RAM_reg_3_1 |                  |
+| u_ahb_rom/U_RAM/RAM_reg_3_2 |                  |
+| u_ahb_rom/U_RAM/RAM_reg_3_3 | [31:30]          |
+
+
+get_property SITE [get_cells u_ahb_rom/U_RAM/RAM_reg_0_0]
+->
+RAMB36_X2Y5
+
+
+report_property   [get_cells u_ahb_rom/U_RAM/RAM_reg_0_0]
+
+
+set all_rom_blocks [get_cells -hierarchical -filter { PRIMITIVE_TYPE =~ BMEM.bram.*  &&  NAME =~  "*u_ahb_rom*" }]
+
+foreach block $all_rom_blocks {
+puts [concat [get_property NAME $block] ":" [get_property SITE $block] ":" [get_property READ_WIDTH_A  $block]]
+}
+
+
+get_nets -of_objects [get_pins u_ahb_rom/U_RAM/RAM_reg_0_0/DIADI]

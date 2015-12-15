@@ -69,7 +69,8 @@ lappend verilog_files "$top_ds/systems/cortex_m0_mcu/verilog/cmsdk_mcu_clkctrl.v
 
 # Arty specific file
 #lappend verilog_files "$top/rtl/sync_ram_wf_x32.v"
-lappend verilog_files "$top/rtl/bytewrite_ram_1b.v"
+#lappend verilog_files "$top/rtl/bytewrite_ram_1b.v"
+lappend verilog_files "$top/rtl/bytewrite_ram_32bits.v"
 lappend verilog_files "$top/rtl/cmsdk_ahb_ram.v"
 lappend verilog_files "$top/import/amba_components/ahb_to_ssram/rtl/verilog/ahb_to_ssram.v"
 

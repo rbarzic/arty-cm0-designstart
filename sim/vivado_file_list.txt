@@ -37,7 +37,7 @@
 /home/ronan/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/cmsdk_mcu_system.v
 /home/ronan/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/cmsdk_mcu_pin_mux.v
 /home/ronan/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/cmsdk_mcu_clkctrl.v
-../rtl/bytewrite_ram_1b.v
+../rtl/bytewrite_ram_32bits.v
 ../rtl/cmsdk_ahb_ram.v
 ../import/amba_components/ahb_to_ssram/rtl/verilog/ahb_to_ssram.v
 ../ips/clock_manager/arty_mmcm/arty_mmcm_clk_wiz.v
