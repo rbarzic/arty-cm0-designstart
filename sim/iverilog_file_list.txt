@@ -44,4 +44,4 @@
 ../rtl/cmsdk_mcu.v
 /home/ronan/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/cmsdk_uart_capture.v
 /home/ronan/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/cmsdk_clkreset.v
-/home/ronan/perso/github/cortexm0_designstart/systems/cortex_m0_mcu/verilog/tb_cmsdk_mcu.v
+../sim/tb_cmsdk_mcu.v

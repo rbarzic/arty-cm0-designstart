@@ -1,1 +1,5 @@
 site_name: My Docs
+pages:
+  - Home : index.md
+
+theme: cosmo

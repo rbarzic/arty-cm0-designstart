@@ -42,10 +42,11 @@ GNG_CC      = arm-none-eabi-gcc
 GNU_OBJDUMP = arm-none-eabi-objdump
 GNU_OBJCOPY = arm-none-eabi-objcopy
 
-LINKER_SCRIPT_PATH = $(SOFTWARE_DIR)/common/scripts
+LINKER_SCRIPT_PATH = ../scripts
 LINKER_SCRIPT = $(LINKER_SCRIPT_PATH)/cmsdk_cm0.ld
 
 GNU_CC_FLAGS = -g -O3 -mthumb $(CPU_TYPE) -std=c99
+GNU_CC_FLAGS += -D__STARTUP_CLEAR_BSS=1
 
 ifeq ($(COMPILE_BIGEND),1)
  # Big Endian
@@ -91,7 +92,7 @@ all_bin: $(TESTNAME).bin
 # Simulation support
 
 wave:
-	gtkwave tb_cmsdk_mcu.vcd
+	gtkwave tb_cmsdk_mcu.vcd &
 comp:
 	make -C $(TOP)/sim comp
 

@@ -219,7 +219,7 @@ def arty_cm0():
         'targets': 'synt,sim_rtl'
     })
     l.append({
-        'file': "{top_ds}/systems/cortex_m0_mcu/verilog/tb_cmsdk_mcu.v",
+        'file': "{top}/sim/tb_cmsdk_mcu.v",
         'targets': 'synt,sim_rtl'
     })
 

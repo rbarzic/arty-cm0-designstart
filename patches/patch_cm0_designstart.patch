@@ -1,0 +1,194 @@
+diff --git a/logical/cmsdk_apb_dualtimers/verilog/cmsdk_apb_dualtimers.v b/logical/cmsdk_apb_dualtimers/verilog/cmsdk_apb_dualtimers.v
+index f6da44e..af58230 100644
+--- a/logical/cmsdk_apb_dualtimers/verilog/cmsdk_apb_dualtimers.v
++++ b/logical/cmsdk_apb_dualtimers/verilog/cmsdk_apb_dualtimers.v
+@@ -28,8 +28,9 @@
+ // Purpose             : Timers module containing two 32-bit down-counters.
+ //
+ //------------------------------------------------------------------------------
+-
++`ifndef NO_TIME_SCALE
+ `timescale 1ns/1ps
++`endif
+ 
+ module cmsdk_apb_dualtimers (
+ // -----------------------------------------------------------------------------
+@@ -324,4 +325,3 @@ module cmsdk_apb_dualtimers (
+ endmodule
+ 
+ // --============================ End ========================================--
+-
+diff --git a/logical/cmsdk_apb_dualtimers/verilog/cmsdk_apb_dualtimers_frc.v b/logical/cmsdk_apb_dualtimers/verilog/cmsdk_apb_dualtimers_frc.v
+index ea40f26..c96f5b3 100644
+--- a/logical/cmsdk_apb_dualtimers/verilog/cmsdk_apb_dualtimers_frc.v
++++ b/logical/cmsdk_apb_dualtimers/verilog/cmsdk_apb_dualtimers_frc.v
+@@ -30,7 +30,9 @@
+ //                        Can be used to generate an interrupt.
+ //------------------------------------------------------------------------------
+ 
++`ifndef NO_TIME_SCALE
+ `timescale 1ns/1ps
++`endif
+ 
+ module cmsdk_apb_dualtimers_frc (
+ // -----------------------------------------------------------------------------
+diff --git a/systems/cortex_m0_mcu/testcodes/hello/makefile b/systems/cortex_m0_mcu/testcodes/hello/makefile
+index a206873..adaf855 100644
+--- a/systems/cortex_m0_mcu/testcodes/hello/makefile
++++ b/systems/cortex_m0_mcu/testcodes/hello/makefile
+@@ -47,7 +47,7 @@ USER_DEFINE    = -DCORTEX_M0
+ DEPS_LIST       = makefile
+ 
+ # Tool chain : ds5 / gcc / keil
+-TOOL_CHAIN      = ds5
++TOOL_CHAIN      ?= gcc
+ 
+ ifeq ($(TOOL_CHAIN),ds5)
+   CPU_TYPE        = --cpu Cortex-M0
+diff --git a/systems/cortex_m0_mcu/verilog/cmsdk_ahb_cs_rom_table.v b/systems/cortex_m0_mcu/verilog/cmsdk_ahb_cs_rom_table.v
+index 07f5184..3470a2f 100644
+--- a/systems/cortex_m0_mcu/verilog/cmsdk_ahb_cs_rom_table.v
++++ b/systems/cortex_m0_mcu/verilog/cmsdk_ahb_cs_rom_table.v
+@@ -138,6 +138,7 @@ module cmsdk_ahb_cs_rom_table
+    //
+ 
+    // Calculate address offset values
++`ifndef IVERILOG
+    localparam [19:0] ENTRY0OFFSET = ENTRY0BASEADDR[31:12] - BASE[31:12];
+    localparam [19:0] ENTRY1OFFSET = ENTRY1BASEADDR[31:12] - BASE[31:12];
+    localparam [19:0] ENTRY2OFFSET = ENTRY2BASEADDR[31:12] - BASE[31:12];
+@@ -148,8 +149,20 @@ module cmsdk_ahb_cs_rom_table
+    localparam [31:0] ENTRY1 = { ENTRY1OFFSET, 10'b0, 1'b1, ENTRY1PRESENT!=0 };
+    localparam [31:0] ENTRY2 = { ENTRY2OFFSET, 10'b0, 1'b1, ENTRY2PRESENT!=0 };
+    localparam [31:0] ENTRY3 = { ENTRY3OFFSET, 10'b0, 1'b1, ENTRY3PRESENT!=0 };
++`else // !`ifdef IVERILOG
++   localparam [19:0] ENTRY0OFFSET = 0; // FIXME
++   localparam [19:0] ENTRY1OFFSET = 0;
++   localparam [19:0] ENTRY2OFFSET = 0;
++   localparam [19:0] ENTRY3OFFSET = 0;
+ 
+ 
++   // Construct entries
++   localparam [31:0] ENTRY0 = 0;
++   localparam [31:0] ENTRY1 = 0;
++   localparam [31:0] ENTRY2 = 0;
++   localparam [31:0] ENTRY3 = 0;
++`endif
++
+    // ------------------------------------------------------------
+    // AHB Interface
+    // ------------------------------------------------------------
+diff --git a/systems/cortex_m0_mcu/verilog/cmsdk_clkreset.v b/systems/cortex_m0_mcu/verilog/cmsdk_clkreset.v
+index 3cebb69..d529f51 100644
+--- a/systems/cortex_m0_mcu/verilog/cmsdk_clkreset.v
++++ b/systems/cortex_m0_mcu/verilog/cmsdk_clkreset.v
+@@ -40,12 +40,9 @@ module cmsdk_clkreset(
+     end
+ 
+   always @(clock_q)
+-      #10 clock_q <= ~clock_q;
++      #5 clock_q <= ~clock_q;
+ 
+   assign CLK = clock_q;
+   assign NRST = reset_n_q;
+ 
+ endmodule
+-
+-
+-
+diff --git a/systems/cortex_m0_mcu/verilog/cmsdk_mcu_pin_mux.v b/systems/cortex_m0_mcu/verilog/cmsdk_mcu_pin_mux.v
+index ef4ac42..6b60bba 100644
+--- a/systems/cortex_m0_mcu/verilog/cmsdk_mcu_pin_mux.v
++++ b/systems/cortex_m0_mcu/verilog/cmsdk_mcu_pin_mux.v
+@@ -157,7 +157,7 @@ module cmsdk_mcu_pin_mux (
+   assign    P1[15] = p1_out_en_mux[15] ? p1_out_mux[15] : 1'bz;
+ 
+ // synopsys translate_off
+-
++`ifndef VERILATOR
+   // Pullup
+   pullup(P0[ 0]);
+   pullup(P0[ 1]);
+@@ -192,7 +192,7 @@ module cmsdk_mcu_pin_mux (
+   pullup(P1[13]);
+   pullup(P1[14]);
+   pullup(P1[15]);
+-
++`endif
+ // synopsys translate_on
+ 
+   //-------------------------------------------
+diff --git a/systems/cortex_m0_mcu/verilog/tb_cmsdk_mcu.v b/systems/cortex_m0_mcu/verilog/tb_cmsdk_mcu.v
+index 5f21748..72824ac 100644
+--- a/systems/cortex_m0_mcu/verilog/tb_cmsdk_mcu.v
++++ b/systems/cortex_m0_mcu/verilog/tb_cmsdk_mcu.v
+@@ -29,6 +29,9 @@
+ `include "cmsdk_mcu_defs.v"
+ 
+ module tb_cmsdk_mcu;
++   parameter ROM_ADDRESS_SIZE = 16;
++
++
+ 
+   wire        XTAL1;   // crystal pin 1
+   wire        XTAL2;   // crystal pin 2
+@@ -107,7 +110,7 @@ module tb_cmsdk_mcu;
+  // --------------------------------------------------------------------------------
+  // UART output capture
+  // --------------------------------------------------------------------------------
+-  assign PCLK = XTAL1;
++  assign PCLK = XTAL2;
+ 
+   cmsdk_uart_capture   u_cmsdk_uart_capture(
+     .RESETn               (NRST),
+@@ -142,7 +145,50 @@ module tb_cmsdk_mcu;
+  // Misc
+  // --------------------------------------------------------------------------------
+ 
++
++`ifndef SDF_SIM
++   task load_program_memory;
++      reg [1024:0] filename;
++      reg [7:0]    memory [1<<ROM_ADDRESS_SIZE:0]; // byte type memory
++      integer      i;
++      reg [31:0]   tmp;
++      integer      dummy;
++
++      begin
++
++         filename = 0;
++         dummy = $value$plusargs("program_memory=%s", filename);
++         if(filename ==0) begin
++            $display("WARNING! No content specified for program memory");
++         end
++         else begin
++            $display("-I- Loading <%s>",filename);
++            $readmemh (filename, memory);
++            for(i=0; i<((1<<ROM_ADDRESS_SIZE)/4); i=i+1) begin
++               tmp[7:0] = memory[i*4+0];
++               tmp[15:8] = memory[i*4+1];
++               tmp[23:16] = memory[i*4+2];
++               tmp[31:24] = memory[i*4+3];
++
++               u_cmsdk_mcu.u_ahb_rom.U_RAM.RAM[i]  = tmp;
++
++            end
++         end
++      end
++   endtask // load_program_memory
++`endif
++
++
++
+   // Format for time reporting
+   initial    $timeformat(-9, 0, " ns", 0);
++`ifdef IVERILOG
++
+ 
++  initial begin
++     load_program_memory;
++     $dumpfile("tb_cmsdk_mcu.vcd");
++     $dumpvars(0,tb_cmsdk_mcu);
++  end
++`endif
+ endmodule
