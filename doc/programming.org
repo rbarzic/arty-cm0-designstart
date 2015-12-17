@@ -59,3 +59,30 @@ puts [concat [get_property NAME $block] ":" [get_property SITE $block] ":" [get_
 
 
 get_nets -of_objects [get_pins u_ahb_rom/U_RAM/RAM_reg_0_0/DIADI]
+
+
+
+    Synthesis mapping       updatemem debug
+RAM_reg_0_0 RAMB36_X2Y5 -> RAMB36_X0Y6
+RAM_reg_0_1 RAMB36_X0Y3 -> RAMB36_X1Y3
+RAM_reg_0_2 RAMB36_X1Y3 -> RAMB36_X0Y3
+RAM_reg_0_3 RAMB36_X0Y6 -> RAMB36_X2Y5
+
+RAM_reg_1_0 RAMB36_X0Y8 -> RAMB36_X0Y9
+RAM_reg_1_1 RAMB36_X0Y5 -> RAMB36_X0Y7
+RAM_reg_1_2 RAMB36_X0Y7 -> RAMB36_X0Y5
+RAM_reg_1_3 RAMB36_X0Y9 -> RAMB36_X0Y8
+
+RAM_reg_2_0 RAMB36_X1Y8  -> X0Y10
+RAM_reg_2_1 RAMB36_X2Y3  -> X0Y4
+RAM_reg_2_2 RAMB36_X0Y4  -> X2Y3
+RAM_reg_2_3 RAMB36_X0Y10 -> X1Y8
+
+Big versus Little does no seem to change anything
+
+X0Y12
+X0Y13
+X2Y10
+X0Y11
+
+updatemem --debug -bit rpt/cpu.bit -meminfo test2.mmi  -data gpio_test.elf -proc design/cortex -o test.bit | tee debug.txt

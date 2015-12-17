@@ -11,7 +11,7 @@ void medium_delay() {
 }
 
 void long_delay() {
-    for(uint32_t i=0;i<200000;i++) {
+    for(uint32_t i=0;i<50000;i++) {
         medium_delay();
     }
 

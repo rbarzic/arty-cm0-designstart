@@ -67,13 +67,13 @@ all_gcc:
 		-L $(LINKER_SCRIPT_PATH) \
 		-D__STACK_SIZE=0x200 \
 		-D__HEAP_SIZE=0x1000 \
-		$(USER_DEFINE) -T $(LINKER_SCRIPT) -o $(TESTNAME).o
+		$(USER_DEFINE) -T $(LINKER_SCRIPT) -o $(TESTNAME).elf
 	# Generate disassembly code
-	$(GNU_OBJDUMP) -S $(TESTNAME).o > $(TESTNAME).lst
+	$(GNU_OBJDUMP) -S $(TESTNAME).elf > $(TESTNAME).lst
 	# Generate binary file
-	$(GNU_OBJCOPY) -S $(TESTNAME).o -O binary $(TESTNAME).bin
+	$(GNU_OBJCOPY) -S $(TESTNAME).elf -O binary $(TESTNAME).bin
 	# Generate hex file
-	$(GNU_OBJCOPY) -S $(TESTNAME).o -O verilog $(TESTNAME).hex
+	$(GNU_OBJCOPY) -S $(TESTNAME).elf -O verilog $(TESTNAME).hex
 	# Suitable for Verilog simulator
 	hexdump -v -e ' 1/4 "%08x " "\n"' $(TESTNAME).bin > $(TESTNAME).vmem32 # Xilinx
 	hexdump -v -e '"@%08.8_ax  " 1/1 "%02x " "\n"' $(TESTNAME).bin > $(TESTNAME).vmem # iverilog
