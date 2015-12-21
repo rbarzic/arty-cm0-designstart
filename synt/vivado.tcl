@@ -175,3 +175,6 @@ write_bitstream -force $outputDir/cpu.bit
 # STEP #7 : netlist with timing
 write_verilog -force -mode timesim -sdf_anno true chip_layout.v
 write_sdf -force chip_layout.sdf
+
+# STEP #8 : output BRAM location information
+source report_bram.tcl > bram.yaml
