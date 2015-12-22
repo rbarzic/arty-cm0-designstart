@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="23cm" height="26cm" viewBox="38 59 459 519" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffff00" x="191" y="125" width="100" height="54"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="191" y="125" width="100" height="54"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="241" y="147.9">
+      <tspan x="241" y="147.9">synthesys</tspan>
+      <tspan x="241" y="163.9">(Vivado)</tspan>
+    </text>
+  </g>
+  <g>
+    <polygon style="fill: #90ee90" points="205.268,61 307.291,61 292.732,101 190.709,101 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="205.268,61 307.291,61 292.732,101 190.709,101 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="249" y="84.9">
+      <tspan x="249" y="84.9">Verilog files</tspan>
+    </text>
+  </g>
+  <g>
+    <polygon style="fill: #90ee90" points="348.559,130.7 450.582,130.7 436.024,170.7 334,170.7 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="348.559,130.7 450.582,130.7 436.024,170.7 334,170.7 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="392.291" y="154.6">
+      <tspan x="392.291" y="154.6">Constraints</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="341.279" y1="150.7" x2="295.471" y2="151.884"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="303.103,146.685 293.235,151.942 303.361,156.682 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="241.721" y1="101" x2="241.134" y2="120.53"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="236.369,112.619 241.067,122.765 246.365,112.92 "/>
+  </g>
+  <g>
+    <rect style="fill: #ff0000" x="257" y="280" width="100" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="257" y="280" width="100" height="38"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="307" y="302.9">
+      <tspan x="307" y="302.9">yaml2mmi</tspan>
+    </text>
+  </g>
+  <g>
+    <polygon style="fill: #add8e6" points="103.77,220 226.643,220 212.812,258 89.939,258 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="103.77,220 226.643,220 212.812,258 89.939,258 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="158.291" y="242.9">
+      <tspan x="158.291" y="242.9">Original Bit file</tspan>
+    </text>
+  </g>
+  <g>
+    <polygon style="fill: #ffc0cb" points="245.345,220 391.432,220 377.237,259 231.15,259 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="245.345,220 391.432,220 377.237,259 231.15,259 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="311.291" y="243.4">
+      <tspan x="311.291" y="243.4">BRAM Placement</tspan>
+    </text>
+  </g>
+  <g>
+    <polygon style="fill: #e5e5e5" points="224.195,360 370.282,360 356.087,399 210,399 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="224.195,360 370.282,360 356.087,399 210,399 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="290.141" y="383.4">
+      <tspan x="290.141" y="383.4">MMI file</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffff00" x="231" y="433" width="100" height="54"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="231" y="433" width="100" height="54"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="281" y="455.9">
+      <tspan x="281" y="455.9">updatemem</tspan>
+      <tspan x="281" y="471.9">(Vivado)</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #add8e6" x="221.25" y="523" width="121.5" height="54"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="221.25" y="523" width="121.5" height="54"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="282" y="545.9">
+      <tspan x="282" y="545.9">Updated </tspan>
+      <tspan x="282" y="561.9">Bit file</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="151.376,258 151.376,460 226.528,460 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="218.764,465 228.764,460 218.764,455 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="216,179 216,198.995 158.291,198.995 158.291,214.518 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="153.291,206.754 158.291,216.754 163.291,206.754 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="266,179 266,199.5 318.389,199.5 318.389,215.528 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="313.389,207.764 318.389,217.764 323.389,207.764 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="307,318 307,338.497 290.141,338.497 290.141,354.523 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="285.141,346.759 290.141,356.759 295.141,346.759 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="283.044" y1="399" x2="282.088" y2="427.525"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="277.351,419.598 282.013,429.76 287.345,419.933 "/>
+  </g>
+  <g>
+    <polygon style="fill: #90ee90" points="394.559,440 496.582,440 482.024,480 380,480 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="394.559,440 496.582,440 482.024,480 380,480 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="438.291" y="463.9">
+      <tspan x="438.291" y="463.9">ELF file</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="304.194" y1="259" x2="305.283" y2="274.529"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="299.752,267.134 305.44,276.76 309.728,266.434 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="387.279" y1="460" x2="335.472" y2="460"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="343.236,455 333.236,460 343.236,465 "/>
+  </g>
+  <g>
+    <polygon style="fill: #90ee90" points="54.5588,132 156.582,132 142.024,172 40,172 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="54.5588,132 156.582,132 142.024,172 40,172 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="98.2912" y="155.9">
+      <tspan x="98.2912" y="155.9">vmem32</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="149.303" y1="152" x2="185.519" y2="152"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="177.755,157 187.755,152 177.755,147 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="281" y1="487" x2="281.876" y2="518.53"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="276.662,510.907 281.938,520.765 286.658,510.63 "/>
+  </g>
+</svg>
