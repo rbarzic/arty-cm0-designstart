@@ -1,5 +1,7 @@
 # arty-designstart-cm0
 
+[![Join the chat at https://gitter.im/rbarzic/arty-cm0-designstart](https://badges.gitter.im/rbarzic/arty-cm0-designstart.svg)](https://gitter.im/rbarzic/arty-cm0-designstart?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This github repository provides the necessary files to use the
 DesignStart Cortex-M0 system on a digilentinc ARTY FPGA board.
 
