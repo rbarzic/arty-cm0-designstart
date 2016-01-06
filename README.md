@@ -1,8 +1,6 @@
 # arty-designstart-cm0
 
 [![Join the chat at https://gitter.im/rbarzic/arty-cm0-designstart](https://badges.gitter.im/rbarzic/arty-cm0-designstart.svg)](https://gitter.im/rbarzic/arty-cm0-designstart?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-
 [![arty-cm0-designstart HuBoard](https://img.shields.io/github/issues/rbarzic/arty-cm0-designstart.svg?label=issues%20%28HuBoard%29)](https://huboard.com/rbarzic/arty-cm0-designstart)
 
 
